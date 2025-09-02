@@ -3,304 +3,194 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Akshaya ♥ Govind | Wedding Invite</title>
-  <meta name="description" content="You're invited to celebrate the wedding of Akshaya & Govind. Save the date!" />
-  <meta property="og:title" content="Akshaya ♥ Govind | Wedding Invite" />
-  <meta property="og:description" content="You're invited to celebrate with us!" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" />
-  <meta name="theme-color" content="#a21caf" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <!-- TailwindCSS via CDN for quick, single-file hosting -->
+  <title>Govindaraj ♥ Akshaya | Wedding Invite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- AOS (Animate On Scroll) -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    :root { --brand:#a21caf; --brand2:#f0abfc; }
+    :root { --brand:#a21caf; }
+    body { font-family: 'Inter', sans-serif; color:#444; }
     .font-display{ font-family: "Cinzel", serif; }
-    .font-sans{ font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.12); }
-    .pattern { background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px); background-size: 20px 20px; }
-    .sparkle { position: relative; }
-    .sparkle:after { content:""; position:absolute; inset:-2px; background: conic-gradient(from 180deg at 50% 50%, transparent 0deg, rgba(255,255,255,0.4) 60deg, transparent 120deg); filter: blur(12px); opacity:.25; pointer-events:none; }
+    .font-script{ font-family: "Great Vibes", cursive; }
+    .hero { position: relative; height: 100vh; display:flex; align-items:center; justify-content:center; text-align:center; color:white; overflow:hidden; }
+    .hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter: brightness(0.5) blur(3px); }
+    .hero-content { position:relative; z-index:1; }
+    .btn { background:var(--brand); color:#fff; padding:0.6rem 1.2rem; border-radius:999px; font-size:0.9rem; display:inline-block; margin:0.3rem; }
+    .btn:hover { opacity:0.9; }
+    .countdown { font-size:1.3rem; font-weight:700; margin-top:1rem; background:rgba(0,0,0,0.4); padding:0.5rem 1rem; border-radius:1rem; display:inline-block; }
+    .modal { position:fixed; inset:0; background:rgba(0,0,0,0.7); display:flex; align-items:center; justify-content:center; z-index:50; }
+    .modal-content { background:white; padding:2rem; border-radius:1rem; max-width:400px; text-align:center; }
+    .hidden { display:none; }
   </style>
 </head>
-<body class="font-sans text-slate-800 bg-gradient-to-br from-pink-50 via-rose-50 to-violet-50 min-h-screen">
+<body>
 
-<!--
-====================
-HOW TO USE / EDIT
-====================
-1) Replace names, date/time, venue, map link, gallery images, and RSVP link in the CONFIG below.
-2) Save this file as index.html.
-3) Host for FREE:
-   • GitHub Pages (recommended for zero cost, no ads):
-     - Create a GitHub repo, add index.html, Settings → Pages → Build from main.
-   • Netlify / Vercel (free tiers) → drag & drop the file to deploy.
-   • If you specifically need PHP, upload to free PHP host like 000webhost or InfinityFree, but this template is static and doesn't need PHP.
-4) Share your invite URL on WhatsApp/Instagram; preview card uses the OG tags above.
--->
+<!-- Hero -->
+<section class="hero">
+  <img src="WhatsApp Image 2025-08-28 at 11.48.55 AM.jpeg" alt="Couple"/>
+  <div class="hero-content">
+    <h1 class="font-display text-4xl md:text-6xl">Govindaraj <span class="font-script">and</span> Akshaya</h1>
+    <p class="mt-3 text-lg">October 24, 2025</p>
 
-<script>
-  // ======= SIMPLE CONFIG (edit here) =======
-  const INVITE = {
-    coupleA: "Akshaya",
-    coupleB: "Govindaraj",
-    dateLabel: "Thursday, 24 October 2025",
-    timeLabel: "9:30 AM – 11:30 AM",
-    venueName: "Mayuraa Residency",
-    address: "9, Kalamegam St Extn, Velachery Rd, East Tambaram, Chennai, Tamil Nadu 600059",
-    mapUrl: "https://maps.app.goo.gl/your-map-link",
-    coverPhoto: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1600&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519741496481-0ef409190b47?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1519741347687-8c6db8ab3b21?q=80&w=1200&auto=format&fit=crop"
-    ],
-    rsvpLink: "https://forms.gle/your-google-form",
-    whatsappMsg: "You're invited to our wedding! Save the date: 28 Aug 2025 at Mayuraa Residency."
-  }
-</script>
+    <!-- Stylish Countdown -->
+    <div id="countdown" class="flex justify-center gap-3 mt-4"></div>
 
-<header class="relative">
-  <div class="absolute inset-0 pattern opacity-40"></div>
-  <img src="" alt="cover" id="cover" class="w-full h-[60vh] object-cover object-center mix-blend-multiply"/>
-  <div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
-  <div class="absolute inset-0 flex items-end">
-    <div class="w-full max-w-5xl mx-auto px-6 pb-10">
-      <div class="glass rounded-2xl p-6 md:p-8 border border-white/30 shadow-2xl">
-        <p class="uppercase tracking-[0.35em] text-[12px] md:text-xs text-slate-700/80">Wedding Invitation</p>
-        <h1 class="font-display text-4xl md:text-6xl mt-2 text-slate-900" data-aos="fade-up"><span id="nameA"></span> <span class="text-[28px] md:text-4xl align-middle">♥</span> <span id="nameB"></span></h1>
-        <p class="mt-4 text-slate-700" id="dateTime" data-aos="fade-up" data-aos-delay="100"></p>
-        <div class="mt-4 flex flex-col sm:flex-row gap-3" data-aos="fade-up" data-aos-delay="150">
-          <a id="calendarBtn" class="inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold bg-slate-900 text-white hover:opacity-90 transition shadow">
-            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-            Add to Calendar
-          </a>
-          <a id="shareBtn" class="inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold bg-white/70 backdrop-blur text-slate-900 hover:bg-white transition border border-slate-200">
-            <i data-lucide="share-2" class="w-4 h-4 mr-2"></i>
-            Share Invite
-          </a>
-        </div>
-      </div>
+    <div class="mt-6 flex justify-center gap-4 flex-wrap">
+      <button onclick="openModal('loveMeter')" class="btn">❤️ Love Meter</button>
     </div>
   </div>
-</header>
+</section>
 
-<main class="max-w-5xl mx-auto px-6">
-  <!-- Countdown -->
-  <section class="mt-16" data-aos="fade-up">
-    <div class="bg-white rounded-2xl p-6 md:p-8 shadow sparkle border border-slate-100">
-      <h2 class="font-display text-2xl md:text-3xl">Countdown</h2>
-      <p class="text-slate-600 mt-1">We can't wait to see you there!</p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6" id="countdown"></div>
-    </div>
-  </section>
+<!-- Events -->
+<section id="events" class="max-w-5xl mx-auto px-6 mt-12">
+  <h2 class="font-display text-3xl text-center mb-8">Wedding Events</h2>
 
-  <!-- Venue -->
-  <section class="mt-10 grid md:grid-cols-2 gap-6 items-stretch" data-aos="fade-up">
-    <div class="bg-white rounded-2xl p-6 md:p-8 shadow border border-slate-100">
-      <h2 class="font-display text-2xl md:text-3xl">Venue</h2>
-      <p class="mt-2 font-semibold" id="venue"></p>
-      <p class="text-slate-600 mt-1" id="address"></p>
-      <div class="mt-4 flex gap-3">
-        <a id="mapBtn" class="inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold bg-slate-900 text-white hover:opacity-90 transition shadow">
-          <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
-          Open in Maps
-        </a>
-        <a id="rsvpBtn" class="inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold bg-white text-slate-900 hover:bg-slate-50 transition border border-slate-200">
-          <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
-          RSVP
-        </a>
+  <!-- Wedding Ceremony -->
+  <div class="grid md:grid-cols-2 gap-6 bg-white rounded-lg shadow p-6 mb-8">
+    <div>
+      <h3 class="font-display text-xl mb-2">Wedding Ceremony</h3>
+      <p>📅 24th October 2025</p>
+      <p>🕤 9:30 AM – 11:30 AM</p>
+      <p class="mt-2 font-semibold">Thirupathi Mahal</p>
+      <p>Chennai – 126</p>
+      <ul class="list-disc list-inside mt-3 text-sm text-gray-600">
+        <li>Reception: 23rd Oct, 6:00 PM – 8:00 PM</li>
+        <li>Muhurtham: 24th Oct, 9:30 AM – 10:30 AM</li>
+      </ul>
+      <div class="mt-4">
+        <a href="#" onclick="addCalendar('Wedding Ceremony','2025-10-24T09:30:00','2025-10-24T11:30:00','Thirupathi Mahal, Chennai–126')" class="btn">📅 Add to Calendar</a>
       </div>
     </div>
-    <iframe id="mapFrame" class="w-full h-72 md:h-auto rounded-2xl border-0 shadow" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-  </section>
+    <iframe class="w-full h-64 rounded-lg shadow" src="https://www.google.com/maps?q=Thirupathi%20Mahal%20Chennai&output=embed"></iframe>
+  </div>
 
-  <!-- Itinerary -->
-  <section class="mt-10" data-aos="fade-up">
-    <div class="bg-white rounded-2xl p-6 md:p-8 shadow border border-slate-100">
-      <h2 class="font-display text-2xl md:text-3xl">Events</h2>
-      <ul class="mt-4 space-y-3">
-        <li class="flex items-start gap-3">
-          <i data-lucide="sunrise" class="w-5 h-5 mt-1"></i>
-          <div>
-            <p class="font-semibold">Muhurtham</p>
-            <p class="text-slate-600 text-sm">9:30 AM – 10:30 AM</p>
-          </div>
-        </li>
-        <li class="flex items-start gap-3">
-          <i data-lucide="utensils" class="w-5 h-5 mt-1"></i>
-          <div>
-            <p class="font-semibold">Reception Lunch</p>
-            <p class="text-slate-600 text-sm">11:00 AM onwards</p>
-          </div>
-        </li>
-      </ul>
+  <!-- Wedding Reception -->
+  <div class="grid md:grid-cols-2 gap-6 bg-white rounded-lg shadow p-6">
+    <div>
+      <h3 class="font-display text-xl mb-2">Wedding Reception</h3>
+      <p>📅 27th October 2025</p>
+      <p>🕡 6:30 PM Onwards</p>
+      <p class="mt-2 font-semibold">VPN Mahal</p>
+      <p>Nagapattinam – 611001</p>
+      <div class="mt-4">
+        <a href="#" onclick="addCalendar('Wedding Reception','2025-10-27T18:30:00','2025-10-27T21:00:00','VPN Mahal, Nagapattinam – 611001')" class="btn">📅 Add to Calendar</a>
+      </div>
     </div>
-  </section>
+    <iframe class="w-full h-64 rounded-lg shadow" src="https://www.google.com/maps?q=VPN%20Mahal%20Nagapattinam&output=embed"></iframe>
+  </div>
+</section>
 
-  <!-- Gallery -->
-  <section class="mt-10" data-aos="fade-up">
-    <h2 class="font-display text-2xl md:text-3xl">Gallery</h2>
-    <div id="gallery" class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
-  </section>
+<!-- Gallery -->
+<section id="gallery" class="max-w-5xl mx-auto px-6 mt-16 text-center">
+  <h2 class="font-display text-3xl mb-8">Gallery</h2>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=600" class="rounded-lg shadow"/>
+    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=600" class="rounded-lg shadow"/>
+    <img src="https://images.unsplash.com/photo-1603228254379-6e31e7a0adbd?q=80&w=600" class="rounded-lg shadow"/>
+  </div>
+</section>
 
-  <!-- Wishes -->
-  <section class="mt-10" data-aos="fade-up">
-    <div class="bg-gradient-to-br from-fuchsia-50 to-pink-50 border border-fuchsia-100 rounded-2xl p-6 md:p-8">
-      <h2 class="font-display text-2xl md:text-3xl">Send Your Wishes</h2>
-      <p class="text-slate-700 mt-2">Bless the couple with a message. It will open WhatsApp with a pre‑typed greeting, ready to send.</p>
-      <a id="wishBtn" class="mt-4 inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold bg-slate-900 text-white hover:opacity-90 transition shadow">
-        <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>
-        Send on WhatsApp
-      </a>
-    </div>
-  </section>
+<!-- Modals -->
+<div id="ringGame" class="modal hidden">
+  <div class="modal-content">
+    <h3 class="font-display mb-2">💍 Find the Ring!</h3>
+    <p class="mb-4 text-sm">Click to find the hidden ring among the hearts.</p>
+    <div id="gameArea" class="grid grid-cols-5 gap-2 mb-4"></div>
+    <button onclick="closeModal('ringGame')" class="btn">Close</button>
+  </div>
+</div>
 
-  <!-- Footer -->
-  <footer class="mt-16 mb-10 text-center text-sm text-slate-500">
-    Made with ♥ | <button id="themeToggle" class="underline">Change theme</button>
-  </footer>
-</main>
+<!-- Love Meter Modal -->
+<div id="loveMeter" class="modal hidden">
+  <div class="modal-content">
+    <h3 class="font-display mb-2">❤️ Love Meter</h3>
+    <p id="meterResult" class="mb-4 text-3xl font-bold">Ready?</p>
+    <button onclick="startLoveMeter()" class="btn">Start</button>
+    <button onclick="closeModal('loveMeter')" class="btn">Close</button>
+  </div>
+</div>
 
-<!-- Tiny UI JS -->
+<footer class="mt-16 mb-10 text-center text-sm text-gray-500">
+  © 2025 Govindaraj & Akshaya — With love ♥
+</footer>
+<audio id="bgMusic" loop autoplay muted>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
+<!-- Scripts -->
 <script>
-  // Init AOS animations & icons
-  document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({ duration: 700, once: true });
-    lucide.createIcons();
-  });
+  // Countdown in box style
+  const countdownEl = document.getElementById("countdown");
+  const targetDate = new Date("2025-10-24T09:30:00").getTime();
 
-  // Fill dynamic content
-  const byId = id => document.getElementById(id);
-  const qs = s => document.querySelector(s);
+  function updateCountdown(){
+    const now = Date.now();
+    let diff = targetDate - now;
+    if(diff < 0) diff = 0;
+    const d = Math.floor(diff/86400000);
+    const h = Math.floor((diff%86400000)/3600000);
+    const m = Math.floor((diff%3600000)/60000);
+    const s = Math.floor((diff%60000)/1000);
 
-  byId('cover').src = INVITE.coverPhoto;
-  byId('nameA').textContent = INVITE.coupleA;
-  byId('nameB').textContent = INVITE.coupleB;
-  byId('dateTime').textContent = `${INVITE.dateLabel} • ${INVITE.timeLabel}`;
-  byId('venue').textContent = INVITE.venueName;
-  byId('address').textContent = INVITE.address;
+    countdownEl.innerHTML = `
+      <div class="bg-white/20 backdrop-blur text-white px-4 py-2 rounded-lg text-center">
+        <div class="text-2xl font-bold">${d}</div>
+        <div class="text-sm">Days</div>
+      </div>
+      <div class="bg-white/20 backdrop-blur text-white px-4 py-2 rounded-lg text-center">
+        <div class="text-2xl font-bold">${h}</div>
+        <div class="text-sm">Hours</div>
+      </div>
+      <div class="bg-white/20 backdrop-blur text-white px-4 py-2 rounded-lg text-center">
+        <div class="text-2xl font-bold">${m}</div>
+        <div class="text-sm">Minutes</div>
+      </div>
+      <div class="bg-white/20 backdrop-blur text-white px-4 py-2 rounded-lg text-center">
+        <div class="text-2xl font-bold">${s}</div>
+        <div class="text-sm">Seconds</div>
+      </div>`;
+  }
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
 
-  // Map buttons
-  byId('mapBtn').href = INVITE.mapUrl;
-  byId('mapBtn').target = '_blank';
-  byId('rsvpBtn').href = INVITE.rsvpLink;
-  byId('rsvpBtn').target = '_blank';
-
-  // Embed map if it's a Google Maps place link
-  if (INVITE.mapUrl.includes('goo.gl') || INVITE.mapUrl.includes('google.')) {
-    const enc = encodeURIComponent(INVITE.address || INVITE.venueName);
-    byId('mapFrame').src = `https://www.google.com/maps?q=${enc}&output=embed`;
-  } else {
-    // Hide map frame if non-Google link
-    byId('mapFrame').classList.add('hidden');
+  // Music toggle
+  const bgMusic = document.getElementById("bgMusic");
+  function toggleMusic(){
+    if(bgMusic.muted){ bgMusic.muted=false; bgMusic.play(); }
+    else { bgMusic.muted=true; }
   }
 
-  // Gallery
-  const gal = byId('gallery');
-  INVITE.gallery.forEach((url, i) => {
-    const img = document.createElement('img');
-    img.src = url; img.alt = `gallery-${i+1}`;
-    img.className = 'w-full h-40 sm:h-56 object-cover rounded-xl shadow border border-white';
-    gal.appendChild(img);
-  });
+  // Modal controls
+  function openModal(id){ document.getElementById(id).classList.remove("hidden"); }
+  function closeModal(id){ document.getElementById(id).classList.add("hidden"); }
 
-  // WhatsApp wishes
-  byId('wishBtn').addEventListener('click', () => {
-    const msg = encodeURIComponent(`${INVITE.whatsappMsg}\n— ${INVITE.coupleA} ♥ ${INVITE.coupleB}`);
-    window.open(`https://wa.me/?text=${msg}`, '_blank');
-  });
+  // Love Meter
+  function startLoveMeter(){
+    const resultEl = document.getElementById("meterResult");
+    let value = 0;
+    resultEl.textContent = "0%";
+    const interval = setInterval(()=>{
+      value += Math.floor(Math.random()*7)+1;
+      if(value >= 100) value = 100;
+      resultEl.textContent = value + "%";
+    },100);
 
-  // Share API
-  byId('shareBtn').addEventListener('click', async () => {
-    const shareData = { title: document.title, text: INVITE.whatsappMsg, url: window.location.href };
-    if (navigator.share) {
-      try { await navigator.share(shareData); } catch(e){}
-    } else {
-      navigator.clipboard.writeText(shareData.url);
-      alert('Link copied to clipboard!');
-    }
-  });
+    setTimeout(()=>{
+      clearInterval(interval);
+      const final = Math.floor(Math.random()*41)+60; // random 60–100
+      resultEl.textContent = "💖 Love Score: " + final + "%";
+    },3000);
+  }
+  function addCalendar(title, start, end, location){
+    const dtStart = new Date(start).toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
+    const dtEnd = new Date(end).toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
 
-  // Add to Calendar (downloads ICS)
-  byId('calendarBtn').addEventListener('click', () => {
-    const start = new Date('2025-08-28T09:30:00+05:30');
-    const end   = new Date('2025-08-28T11:30:00+05:30');
-    const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Invite//EN\nBEGIN:VEVENT\nUID:${Date.now()}@invite\nDTSTAMP:${toICS(new Date())}\nDTSTART:${toICS(start)}\nDTEND:${toICS(end)}\nSUMMARY:${INVITE.coupleA} ♥ ${INVITE.coupleB} — Wedding\nLOCATION:${INVITE.venueName}, ${INVITE.address}\nDESCRIPTION:Join us!\nEND:VEVENT\nEND:VCALENDAR`;
-    const blob = new Blob([ics], { type: 'text/calendar' });
+    const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:${title}\nDTSTART:${dtStart}\nDTEND:${dtEnd}\nLOCATION:${location}\nEND:VEVENT\nEND:VCALENDAR`;
+
+    const blob = new Blob([ics], { type:'text/calendar' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'wedding-invite.ics';
+    a.download = `${title}.ics`;
     a.click();
-  });
-
-  function toICS(d){
-    const pad = n => String(n).padStart(2,'0');
-    return d.getUTCFullYear()+
-      pad(d.getUTCMonth()+1)+
-      pad(d.getUTCDate())+'T'+
-      pad(d.getUTCHours())+
-      pad(d.getUTCMinutes())+
-      pad(d.getUTCSeconds())+'Z';
   }
-
-  // Countdown
-  function startCountdown() {
-    const target = new Date('2025-08-28T09:30:00+05:30').getTime();
-    const el = byId('countdown');
-    const parts = ['Days','Hours','Minutes','Seconds'];
-    parts.forEach(p => {
-      const box = document.createElement('div');
-      box.innerHTML = `<div class="bg-white rounded-xl border border-slate-200 p-4 text-center shadow">
-        <div class="text-3xl md:text-4xl font-bold" data-part="${p}">00</div>
-        <div class="text-slate-500 text-xs mt-1">${p}</div>
-      </div>`;
-      el.appendChild(box);
-    });
-
-    function tick(){
-      const now = Date.now();
-      let diff = Math.max(0, target - now);
-      const sec = Math.floor(diff/1000)%60;
-      const min = Math.floor(diff/60000)%60;
-      const hr  = Math.floor(diff/3600000)%24;
-      const day = Math.floor(diff/86400000);
-      el.querySelector('[data-part="Days"]').textContent = String(day).padStart(2,'0');
-      el.querySelector('[data-part="Hours"]').textContent = String(hr).padStart(2,'0');
-      el.querySelector('[data-part="Minutes"]').textContent = String(min).padStart(2,'0');
-      el.querySelector('[data-part="Seconds"]').textContent = String(sec).padStart(2,'0');
-    }
-    tick();
-    setInterval(tick, 1000);
-  }
-  startCountdown();
-
-  // Theme toggle (3 palettes)
-  const themes = [
-    { from:"from-pink-50", to:"to-violet-50", brand:"#a21caf" },
-    { from:"from-amber-50", to:"to-rose-50", brand:"#b45309" },
-    { from:"from-emerald-50", to:"to-cyan-50", brand:"#065f46" },
-  ];
-  let tIdx = 0;
-  byId('themeToggle').addEventListener('click', () => {
-    const b = document.body;
-    const cur = themes[tIdx];
-    tIdx = (tIdx+1)%themes.length;
-    const nxt = themes[tIdx];
-    b.classList.remove(`from-${cur.from.split('-')[1]}-50`, cur.from, cur.to);
-    b.classList.add(nxt.from, nxt.to);
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', nxt.brand);
-  });
 </script>
-
 </body>
 </html>
-
